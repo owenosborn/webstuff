@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Messages from Mom</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #message {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2em;
+            opacity: 0;
+            text-align: center;
+            transition: opacity 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <p id="message"></p>
+
+    <script>
+        var messages = [
+            'Day’s journey, how fare you child?',
+            'In my heart, love flows for thee like a river unabating',
+            'Lunch, the day’s sustenance, has it graced your palate?',
+            'Fortune on your test today, your victory I foresee',
+            'A feline’s antics, humor caught in digital eternity, a link I gift thee',
+            'Take your shield, your umbrella against the day’s tempest',
+            'How passed the meeting, your brilliance in display, no doubt',
+            'The potion of life, your medicine, have you consumed?',
+            'A feast awaits you, your favored victuals prepared with love',
+            'Homebound, tread safely in the encroaching night',
+            'Speak to your grandmother, her heart pines for your voice',
+            'Your jacket remains, abandoned, do you require its warmth?',
+            'A journey to the market, list your needed wares, if any',
+            'Day’s voyage, faring well? Never forget, you’re a radiant star',
+            'Quietude prevails, your absence keenly felt',
+            'A tale of your day, I eagerly await its telling',
+            'Your room bathed in artificial day, the lights, turn them off',
+            'Tomorrow’s challenge, the exam, have you prepared?',
+            'The recipe you sought, here it is, weave your culinary tale',
+            'The hound awaits sustenance, feed it upon your return, held am I at work'
+        ];
+
+        var index = 0;
+        var messageElement = document.getElementById('message');
+
+        function displayMessage() {
+            messageElement.style.opacity = '0';
+            setTimeout(function() {
+                messageElement.textContent = messages[index];
+                messageElement.style.opacity = '1';
+                index = (index + 1) % messages.length;
+            }, 2000);
+        }
+
+        setInterval(displayMessage, 6000);
+        displayMessage();
+    </script>
+</body>
+</html>
+
